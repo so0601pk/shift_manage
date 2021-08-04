@@ -37,8 +37,8 @@ return [
 
     'guards' => [
         'user' => [
-            'driver' => 'session',
-            'provider' => 'users',
+            'driver' => 'session',//使用するガードドライバーを定義
+            'provider' => 'users',//使用プロバイダーを定義
         ],
 
         'admin' => [
@@ -73,7 +73,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\User::class,//使用するモデルを定義
         ],
 
         'admins' => [
