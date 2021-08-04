@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>body{background-color: tomato;}</style>
+
 </head>
 <body>
     <div id="app">
