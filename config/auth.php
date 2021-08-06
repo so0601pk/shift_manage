@@ -35,6 +35,8 @@ return [
     |
     */
 
+    //認証種別、方法について定義する
+
     'guards' => [
         'user' => [
             'driver' => 'session',//使用するガードドライバーを定義
@@ -70,10 +72,12 @@ return [
     |
     */
 
+    //認証の情報（「誰なのか」の情報）の提供場所を定義する
+
     'providers' => [
         'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,//使用するモデルを定義
+            'driver' => 'eloquent',//エロクワント方式か、database方式
+            'model' => App\Models\User::class,//使用(提供)するモデルを定義
         ],
 
         'admins' => [
