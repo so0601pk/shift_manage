@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(); //Auth::routes(['register' => false]))するとRegisterのリンクがトップ画面上から消え
 
 Route::get('/home', 'HomeController@index')->name('home');
 

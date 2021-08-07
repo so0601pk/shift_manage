@@ -9,6 +9,7 @@ class HomeController extends Controller
 {
     public function __construct()
     {
+        //以下の設定でログインしないと見れないページをURLで開いた際にログイン画面へ飛ばしている
         $this->middleware('auth:admin');
     }
 
