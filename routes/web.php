@@ -69,3 +69,16 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     });
 
 });
+
+//管理者
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
+    // Route::get('index', 'ContactFormController@index')->name('contact.index');//nameを書くとviewを書くときに楽になる
+    // Route::get('create', 'ContactFormController@create')->name('contact.create');
+    // Route::post('store', 'ContactFormController@store')->name('contact.store');
+    // Route::get('show/{id}', 'ContactFormController@show')->name('contact.show');//詳細なデータをみるときに使う
+    // Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
+    // Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
+    // Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
+
+    Route::get('top', 'Admin\ShiftManageController@index')->name('admin.top');
+});
