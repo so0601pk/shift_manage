@@ -39,8 +39,8 @@ return [
 
     'guards' => [
         'user' => [
-            'driver' => 'session',//使用するガードドライバーを定義
-            'provider' => 'users',//使用プロバイダーを定義
+            'driver' => 'session',//使用するガードドライバーを定義(sessionかtoken)
+            'provider' => 'users',//使用プロバイダーを定義(下記のproviderのキーを指定)
         ],
 
         'admin' => [

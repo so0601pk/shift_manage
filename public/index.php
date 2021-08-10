@@ -21,7 +21,7 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php'; //【１】autoload読み込み
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__.'/../bootstrap/app.php'; // 【２】Applicationインスタンス作成
 
 /*
 |--------------------------------------------------------------------------
@@ -49,10 +49,10 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class); // 【３】HttpKernelインスタンス作成
 
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
+$response = $kernel->handle( // 【５】HttpKernelがリクエストを処理してResponse取得
+    $request = Illuminate\Http\Request::capture() // 【４】Requestインスタンス作成
 );
 
 $response->send();
