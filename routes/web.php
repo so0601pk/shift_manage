@@ -20,7 +20,7 @@ Auth::routes(); //Auth::routes(['register' => false]))するとRegisterのリン
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//ユーザー
+//ユーザーログイン
 Route::namespace('User')->prefix('user')->name('user.')->group(function(){
 
     //ログイン認証関連
@@ -37,6 +37,17 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function(){
         Route::resource('home', 'HomeController', ['only' => 'index']);
     });
 
+});
+
+//ユーザー
+Route::group(['prefix' => 'user', 'middleware' => 'user'], function(){
+    Route::get('index', 'ContactFormController@index')->name('contact.index');//nameを書くとviewを書くときに楽になる
+    Route::get('create', 'ContactFormController@create')->name('contact.create');
+    Route::post('store', 'ContactFormController@store')->name('contact.store');
+    Route::get('show/{id}', 'ContactFormController@show')->name('contact.show');//詳細なデータをみるときに使う
+    Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
+    Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
+    Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
 });
 
 // 管理者
