@@ -50,6 +50,8 @@ Route::group(['prefix' => 'user', 'middleware' => 'user'], function(){
     // Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
 });
 
+Route::get('user.auth.login', 'User\LoginController@login')->name('user.auth.login');
+
 // 管理者
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
@@ -80,5 +82,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
     // Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
     // Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
 
+    
     Route::get('top', 'Admin\ShiftManageController@index')->name('admin.top');
 });
+
+Route::get('admin.auth.login', 'Admin\ShiftManageController@login')->name('admin.auth.login');
