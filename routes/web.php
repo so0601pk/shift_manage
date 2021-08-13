@@ -83,8 +83,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
     // Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
     // Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
 
-    
+
     Route::get('top', 'Admin\ShiftManageController@index')->name('admin.top');
+    Route::get('calendar', 'CalendarController@show')->name('admin.calendar');
 });
 
 Route::get('admin.auth.login', 'Admin\ShiftManageController@login')->name('admin.auth.login');
