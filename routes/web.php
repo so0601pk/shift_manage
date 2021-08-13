@@ -52,6 +52,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'user'], function(){
 
 Route::get('user.auth.login', 'User\LoginController@login')->name('user.auth.login');
 
+
 // 管理者
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
