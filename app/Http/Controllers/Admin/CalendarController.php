@@ -15,7 +15,7 @@ class CalendarController extends Controller
 
 		$calendar = new CalendarView(time());
 
-		return view('calendar', [
+		return view('admin.calendar', [
 			"calendar" => $calendar
 		]);
 	}
