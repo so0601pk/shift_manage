@@ -42,6 +42,7 @@ class CalendarView {
 
     /**
 	 * 週の情報を取得する
+     *　週カレンダーを一月分用意した配列$weeksを返却するのが目的
 	 */
     protected function getWeeks(){
 		$weeks = [];
