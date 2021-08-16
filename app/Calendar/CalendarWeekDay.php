@@ -14,7 +14,7 @@ class CalendarWeekDay {
 	}
 
 	/**
-	 * @return 
+	 * @return
 	 */
 	function render(){
 		return '<p class="day">' . $this->carbon->format("j"). '</p>';
