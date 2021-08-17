@@ -9,6 +9,7 @@
 }
 .calendar table td {
     padding: 3px;
+    padding-bottom: 60px;
     border: solid 1px #999;
 }
 .calendar table td:before {
