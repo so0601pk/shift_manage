@@ -1,9 +1,9 @@
 .day-blank {
     background-color: #efefef;
 }
-.day-sun .day {
+/* .day-sun .day {
     color: red;
-}
+} */
 .day-sat .day {
     color: blue;
 }
