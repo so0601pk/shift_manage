@@ -13,7 +13,7 @@ class AdminTableSeeder extends Seeder
     {
         //
         DB::table('admins')->insert([
-            'name'              => 'admin',
+            'name'              => '鈴木　聖一郎',
             'email'             => 'admin@example.com',
             'password'          => Hash::make('12345678'),
             'remember_token'    => Str::random(10),
