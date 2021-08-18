@@ -17,6 +17,7 @@ class AdminTableSeeder extends Seeder
             'email'             => 'admin@example.com',
             'password'          => Hash::make('12345678'),
             'remember_token'    => Str::random(10),
+            'admin_id'          => '12345678'
         ]);
     }
 }
