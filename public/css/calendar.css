@@ -9,7 +9,7 @@
 }
 .calendar table td {
     padding: 3px;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
     border: solid 1px #999;
 }
 .calendar table td:before {
@@ -24,4 +24,8 @@
 .calendar table th {
     text-align: center;
     border: solid 1px #999;
+}
+
+.card .card-header {
+    font-size: 25px;
 }
