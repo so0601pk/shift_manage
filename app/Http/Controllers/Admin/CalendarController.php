@@ -17,6 +17,7 @@ class CalendarController extends Controller
 
 		return view('admin.calendar', [
 			"calendar" => $calendar
+			//viewへ作成したcalendarviewオブジェクトを渡す
 		]);
 	}
 }

@@ -72,7 +72,7 @@ class CalendarView {
 		$week = new CalendarWeek($firstDay->copy());
 		$weeks[] = $week;
 
-		//作業用の日
+		//作業用の日(初日から7日後の週開始日を取得)
 		$tmpDay = $firstDay->copy()->addDay(7)->startOfWeek();
 
 		//月末までループさせる
