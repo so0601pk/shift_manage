@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(); //Auth::routes(['register' => false]))するとRegisterのリンクがトップ画面上から消え
-
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+Auth::routes(); //Auth::routes(['register' => false]))するとRegisterのリンクがトップ画面上から消え
 
 //ユーザーログイン
 Route::namespace('User')->prefix('user')->name('user.')->group(function(){
@@ -40,7 +41,7 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function(){
 });
 
 //ユーザー
-Route::group(['prefix' => 'user', 'middleware' => 'user'], function(){
+Route::group(['prefix' => 'user', 'middleware' => 'auth:user'], function(){
     // Route::get('index', 'ContactFormController@index')->name('contact.index');//nameを書くとviewを書くときに楽になる
     // Route::get('create', 'ContactFormController@create')->name('contact.create');
     // Route::post('store', 'ContactFormController@store')->name('contact.store');
@@ -48,6 +49,8 @@ Route::group(['prefix' => 'user', 'middleware' => 'user'], function(){
     // Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
     // Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
     // Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
+
+    Route::get('calendar', 'User\CalendarController@show')->name('user.calendar');
 });
 
 Route::get('user.auth.login', 'User\LoginController@login')->name('user.auth.login');
