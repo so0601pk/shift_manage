@@ -50,6 +50,11 @@
                                 </li>
                             @endif
                         @else
+                            <li>
+                                <a class="dropdown-item" href="{{ route('user.apply') }}">
+                                    シフト申請
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

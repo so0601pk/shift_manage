@@ -51,6 +51,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth:user'], function(){
     // Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
 
     Route::get('calendar', 'User\CalendarController@show')->name('user.calendar');
+    Route::get('apply', 'User\ApplyController@create')->name('user.apply');
 });
 
 Route::get('user.auth.login', 'User\LoginController@login')->name('user.auth.login');
