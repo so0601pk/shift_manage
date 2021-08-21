@@ -38,6 +38,7 @@ class CalendarView {
         $html[] = '<tbody>';
 
         $weeks = $this->getWeeks();
+		//$weekには1週目〜月末週までのカレンダーが入っている
         foreach($weeks as $week){
             $html[] = '<tr class="'.$week->getClassName().'">';
             $days = $week->getDays();
@@ -69,13 +70,17 @@ class CalendarView {
 		$lastDay = $this->carbon->copy()->lastOfMonth();
 
 		//1週目
-		$week = new CalendarWeek($firstDay->copy());
+		$week = new CalendarWeek($firstDay->copy());//「その週のカレンダーを出力する」ためのクラス
+		//週の開始日〜終了日までを作成するgetDays()関数と
+		//後からCSSを当てることが出来るようにクラス名を出力するgetClassName()関数を持つ
+
+		//1周目のカレンダーを保持
 		$weeks[] = $week;
 
 		//作業用の日(初日から7日後の週開始日を取得)
 		$tmpDay = $firstDay->copy()->addDay(7)->startOfWeek();
 
-		//月末までループさせる
+		//2周目から月末までループさせ、各週のカレンダーを作成する
 		while($tmpDay->lte($lastDay)){
 			//週カレンダーViewを作成する
 			$week = new CalendarWeek($tmpDay, count($weeks));
