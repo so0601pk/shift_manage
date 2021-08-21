@@ -57,11 +57,11 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a> -->
 
-                                <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> -->
-                                    <a class="dropdown-item" href="{{ route('admin.logout') }}">
+                                <div aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('admin.logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('ログアウト') }}
-                                        <!-- onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();" -->
                                     </a>
 
                                     <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
