@@ -91,7 +91,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
     Route::get('top', 'Admin\ShiftManageController@index')->name('admin.top');
     Route::get('calendar', 'Admin\CalendarController@show')->name('admin.calendar');
     Route::get('candidate_index', 'Admin\CandidateController@index')->name('admin.candidate_index');
-    Route::get('candidate_create', 'Admin\CandidateController@index')->name('admin.candidate_create');
+    Route::get('candidate_create', 'Admin\CandidateController@create')->name('admin.candidate_create');
 });
 
 Route::get('admin.auth.login', 'Admin\ShiftManageController@login')->name('admin.auth.login');
