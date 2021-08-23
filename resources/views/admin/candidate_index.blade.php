@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">シフト候補</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,15 +15,13 @@
                     @endif
                     <form action="{{ route('admin.candidate_create')}}">
                         <button type="submit" class="btn btn-primary">
-                            新規登録
+                            新規シフト候補登録
                         </button>
                     </form>
                     <!-- <form methid="GET" action="#" class="d-flex">
                         <input class="form-control me-2" name="serch" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form> -->
-                    candidateです。
-
                     <table class="table">
                         <thead>
                             <tr>
@@ -34,7 +32,7 @@
                         <tbody>
                             @foreach($candidates as $candidate)
                             <tr>
-                                <th>{{$candidate->candidate_id}}</th>
+                                <th>{{$candidate->candidate_name}}</th>
                                 <td>{{$candidate->candidate_time}}</td>
 
                             </tr>
