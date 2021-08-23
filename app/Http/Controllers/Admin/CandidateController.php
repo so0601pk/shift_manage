@@ -45,6 +45,13 @@ class CandidateController extends Controller
     public function store(Request $request)
     {
         //
+        $candidate = new CandidateShift;
+
+        $candidate->candidate_name = $request->input('candidate_name');
+        $candidate->candidate_time = $request->input('candidate_time');
+
+        $candidate->save();
+        return redirect('Admin/candidate_index');
     }
 
     /**
