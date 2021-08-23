@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Admin\CandidateShift;
+
 //DBファサード使用のために記述
 use Illuminate\Support\Facades\DB;
 
@@ -20,7 +22,7 @@ class CandidateController extends Controller
         //
         $query = DB::table('candidate_shifts');
         $candidates = $query->select('candidate_id','candidate_time');
-        return view('admin.candidate_index', compact($candidates));
+        return view('admin.candidate_index', compact('candidates'));
     }
 
     /**

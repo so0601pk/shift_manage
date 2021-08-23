@@ -26,7 +26,7 @@
                     
                     createです。
                     <br>
-                    <form method="POST" action="{{ route('admin.candidate_store') }}">
+                    <form method="POST" action="#">
                     @csrf
                         氏名
                         <input type="text" name="your_name">

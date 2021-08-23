@@ -18,7 +18,7 @@
                             新規登録
                         </button>
                     </form>
-                    <!-- <form methid="GET" action="{{ route('contact.index') }}" class="d-flex">
+                    <!-- <form methid="GET" action="#" class="d-flex">
                         <input class="form-control me-2" name="serch" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form> -->
@@ -36,12 +36,12 @@
                             <tr>
                                 <th>{{$candidate->candidate_id}}</th>
                                 <td>{{$candidate->candidate_time}}</td>
-                                <!-- <td><a href="{{ route('contact.show',['id' => $contact->id ]) }}">詳細をみる</a></td> -->
+
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $contacts->links() }}
+
                 </div>
             </div>
         </div>
