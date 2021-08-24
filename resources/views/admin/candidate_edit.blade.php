@@ -15,7 +15,7 @@
                     @endif
                     editです。
                     <br>
-                    <form method="POST" action="#">
+                    <form method="POST" action="{{ route('admin.candidate_update', ['id' => $candidate->id ]) }}">
                     @csrf
                         シフト記号
                         <input type="text" name="candidate_name" value="{{ $candidate->candidate_name }}">
