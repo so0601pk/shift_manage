@@ -51,7 +51,7 @@ class CandidateController extends Controller
         $candidate->candidate_time = $request->input('candidate_time');
 
         $candidate->save();
-        return redirect('Admin/candidate_index');
+        return redirect('admin/candidate_index');
     }
 
     /**
