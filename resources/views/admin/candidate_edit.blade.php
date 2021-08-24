@@ -17,41 +17,20 @@
                     <br>
                     <form method="POST" action="#">
                     @csrf
-                        氏名
-                        <input type="text" name="your_name" value="{{ $contact->your_name }}">
+                        シフト記号
+                        <input type="text" name="your_name" value="{{ $candidate->candidate_name }}">
                         <br>
-                        件名
-                        <input type="text" name="title" value="{{ $contact->title }}">
+                        勤務開始時間
+                        <input type="text" name="title" value="{{ $candidate->begin_time }}">
                         <br>
-                        メールアドレス
-                        <input type="email" name="email" value="{{ $contact->email }}">
+                        勤務終了時間
+                        <input type="email" name="email" value="{{ $candidate->end_time }}">
                         <br>
-                        ホームページ
-                        <input type="url" name="url" value="{{ $contact->url }}">
-                        <br>
-                        性別
-                        <input type="radio" name="gender" value="0" @if($contact->gender === 0) checked @endif>男性
-                        <input type="radio" name="gender" value="1" @if($contact->gender === 1) checked @endif>女性
-                        <br>
-                        年齢
-                        <select name="age">
-                        <option value="">選択して下さい</option>
-                        <option value="1" @if($contact->age === 1) selected @endif >~19歳</option>
-                        <option value="2" @if($contact->age === 2) selected @endif >20~29歳</option>
-                        <option value="3" @if($contact->age === 3) selected @endif >30~39歳</option>
-                        <option value="4" @if($contact->age === 4) selected @endif >40~49歳</option>
-                        <option value="5" @if($contact->age === 5) selected @endif >50~59歳</option>
-                        <option value="6" @if($contact->age === 6) selected @endif >60~歳</option>
-                        </select>
-                        <br>
-                        お問い合わせ内容
-                        <textarea name="contact">{{ $contact->contact }}</textarea>
+                        休憩時間
+                        <input type="url" name="url" value="{{ $candidate->rest_time }}">
                         <br>
 
-                        <input type="checkbox" name="cation" value="1">注意事項に同意する
-                        <br>
-                        
-                        <input type="submit" class="btn btn-info" value="更新する">
+                        <input type="submit" class="btn btn-success" value="更新する">
                     </from>
                 </div>
             </div>
