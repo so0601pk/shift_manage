@@ -38,6 +38,12 @@
                                 <td>{{$candidate->begin_time}}</td>
                                 <td>{{$candidate->end_time}}</td>
                                 <td>{{$candidate->rest_time}}</td>
+                                <td>
+                                    <form action="{{ route('admin.candidate_edit', [ 'id' => '$candidate->id' ]) }}">
+                                    @csrf
+                                        <input type="submit" class="btn btn-success" value="編集する">
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
