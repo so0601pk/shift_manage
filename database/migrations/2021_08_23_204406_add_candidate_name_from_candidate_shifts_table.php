@@ -28,6 +28,7 @@ class AddCandidateNameFromCandidateShiftsTable extends Migration
     {
         Schema::table('candidate_shifts', function (Blueprint $table) {
             //
+            
         });
     }
 }

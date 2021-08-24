@@ -15,7 +15,9 @@ class AddCandidateTimeFromCandidateShiftsTable extends Migration
     {
         Schema::table('candidate_shifts', function (Blueprint $table) {
             //
-            $table->time('candidate_time')->first();
+            $table->time('begin_time');
+            $table->time('end_time');
+            $table->time('rest_time');
         });
     }
 
