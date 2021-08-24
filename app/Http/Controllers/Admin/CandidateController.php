@@ -92,6 +92,15 @@ class CandidateController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $candidate = CandidateShift::find($id);
+
+        $candidate->candidate_name = $request->input('candidate_name');
+        $candidate->begin_time = $request->input('begin_time');
+        $candidate->end_time = $request->input('end_time');
+        $candidate->rest_time = $request->input('rest_time');
+
+        $candidate->save();
+        return redirect('admin/candidate_index');
     }
 
     /**
