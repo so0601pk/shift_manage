@@ -28,10 +28,16 @@
                     <form method="POST" action="{{ route('admin.candidate_store') }}">
                     @csrf
                         シフト記号
-                        <input type="text" name="candidate_name">
+                        <input type="text" name="candidate_name" placeholder="早A">
                         <br>
-                        勤務時間
-                        <input type="text" name="candidate">
+                        勤務開始時刻
+                        <input type="text" name="candidate" placeholder="09:00">
+                        <br>
+                        勤務終了時刻
+                        <input type="text" name="candidate" placeholder="18:30">
+                        <br>
+                        休憩時間
+                        <input type="text" name="candidate" placeholder="1:00">
                         <br>
                         <input type="submit" class="btn btn-info" value="登録する">
                     </from>
