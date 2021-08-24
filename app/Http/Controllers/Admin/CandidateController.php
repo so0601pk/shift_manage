@@ -48,7 +48,9 @@ class CandidateController extends Controller
         $candidate = new CandidateShift;
 
         $candidate->candidate_name = $request->input('candidate_name');
-        $candidate->candidate_time = $request->input('candidate_time');
+        $candidate->begin_time = $request->input('begin_time');
+        $candidate->end_time = $request->input('end_time');
+        $candidate->rest_time = $request->input('rest_time');
 
         $candidate->save();
         return redirect('admin/candidate_index');
