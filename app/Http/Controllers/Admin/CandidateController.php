@@ -77,6 +77,9 @@ class CandidateController extends Controller
     public function edit($id)
     {
         //
+        $candidate = CandidateShift::find($id);
+        //dd($candidate);
+        return view('admin/candidate_edit', compact('candidate'));
     }
 
     /**

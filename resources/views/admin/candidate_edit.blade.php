@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
 <div class="container">
@@ -18,16 +18,16 @@
                     <form method="POST" action="#">
                     @csrf
                         シフト記号
-                        <input type="text" name="your_name" value="{{ $candidate->candidate_name }}">
+                        <input type="text" name="candidate_name" value="{{ $candidate->candidate_name }}">
                         <br>
                         勤務開始時間
-                        <input type="text" name="title" value="{{ $candidate->begin_time }}">
+                        <input type="text" name="begin_time" value="{{ $candidate->begin_time }}">
                         <br>
                         勤務終了時間
-                        <input type="email" name="email" value="{{ $candidate->end_time }}">
+                        <input type="text" name="end_time" value="{{ $candidate->end_time }}">
                         <br>
                         休憩時間
-                        <input type="url" name="url" value="{{ $candidate->rest_time }}">
+                        <input type="text" name="rest_time" value="{{ $candidate->rest_time }}">
                         <br>
 
                         <input type="submit" class="btn btn-success" value="更新する">
