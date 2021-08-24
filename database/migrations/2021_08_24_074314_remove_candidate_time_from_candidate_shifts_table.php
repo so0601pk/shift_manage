@@ -15,7 +15,7 @@ class RemoveCandidateTimeFromCandidateShiftsTable extends Migration
     {
         Schema::table('candidate_shifts', function (Blueprint $table) {
             //
-            
+            $table->dropColumn('candidate_time');
         });
     }
 
@@ -28,7 +28,7 @@ class RemoveCandidateTimeFromCandidateShiftsTable extends Migration
     {
         Schema::table('candidate_shifts', function (Blueprint $table) {
             //
-            $table->dropColumn('candidate_time');
+            
         });
     }
 }

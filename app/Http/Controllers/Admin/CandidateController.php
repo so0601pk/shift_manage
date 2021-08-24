@@ -21,7 +21,8 @@ class CandidateController extends Controller
     {
         //
         $query = DB::table('candidate_shifts');
-        $candidates = $query->select('candidate_name','candidate_time')->get();
+        $candidates = $query->select('candidate_name','begin_time','end_time','rest_time')
+        ->get();
         return view('admin.candidate_index', compact('candidates'));
     }
 

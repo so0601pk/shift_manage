@@ -26,15 +26,18 @@
                         <thead>
                             <tr>
                                 <th scope="col">シフト記号</th>
-                                <th scope="col">勤務時間</th>
+                                <th scope="col">勤務開始時間</th>
+                                <th scope="col">勤務終了時間</th>
+                                <th scope="col">休憩時間</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($candidates as $candidate)
                             <tr>
                                 <th>{{$candidate->candidate_name}}</th>
-                                <td>{{$candidate->candidate_time}}</td>
-
+                                <td>{{$candidate->begin_time}}</td>
+                                <td>{{$candidate->end_time}}</td>
+                                <td>{{$candidate->rest_time}}</td>
                             </tr>
                             @endforeach
                         </tbody>
