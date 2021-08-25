@@ -22,6 +22,15 @@ class CandidateController extends Controller
         //
         $query = DB::table('candidate_shifts');
         $candidates = $query->select('candidate_name','begin_time','end_time','rest_time','id')
+        ->orderByRaw("CASE
+        　　WHEN candidate_name LIKE '早%' THEN 1
+        　　WHEN candidate_name LIKE '中%' THEN 2
+        　　WHEN candidate_name LIKE '遅%' THEN 3
+        　　WHEN candidate_name LIKE 'F%' THEN 4
+        　　ELSE 9999
+        　　END"
+        )
+        ->orderBy('candidate_name', 'desc')
         ->get();
         return view('admin.candidate_index', compact('candidates'));
     }
