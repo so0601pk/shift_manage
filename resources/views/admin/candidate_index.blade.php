@@ -38,7 +38,7 @@
                                 <td>{{$candidate->begin_time}}</td>
                                 <td>{{$candidate->end_time}}</td>
                                 <td>{{$candidate->rest_time}}</td>
-                                <td>
+                                <td class="candidate"><style>.candidate{display: flex;}</style>
                                     <form action="{{ route('admin.candidate_edit', [ 'id' => $candidate->id ]) }}">
                                     @csrf
                                         <input type="submit" class="btn btn-success" value="編集する">
@@ -47,6 +47,7 @@
                                     @csrf
                                         <a href="#" class="btn btn-danger" data-id="{{ $candidate->id }}" onclick="deletePost(this);" >削除する</a>
                                     </form>
+                                    <style>.btn-danger{margin-left: 10px;}</style>
                                 </td>
                             </tr>
                             @endforeach
