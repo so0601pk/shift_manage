@@ -53,7 +53,7 @@
                             @endif
                         @else
                             <li>
-                                <a class="dropdown-item" href="{{ route('admin.top') }}">
+                                <a class="dropdown-item" href="{{ route('admin.calendar') }}">
                                     トップ
                                 </a>
                             </li>
