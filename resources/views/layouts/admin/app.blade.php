@@ -53,6 +53,11 @@
                             @endif
                         @else
                             <li>
+                                <a class="dropdown-item" href="{{ route('admin.top') }}">
+                                    トップ
+                                </a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{{ route('admin.candidate_index') }}">
                                     シフト候補作成
                                 </a>
