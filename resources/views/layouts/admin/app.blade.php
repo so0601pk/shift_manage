@@ -58,6 +58,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a class="dropdown-item" href="#">
+                                    従業員一覧
+                                </a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{{ route('admin.candidate_index') }}">
                                     シフト候補作成
                                 </a>
