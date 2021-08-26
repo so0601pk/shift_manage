@@ -113,5 +113,9 @@ class CandidateController extends Controller
     public function destroy($id)
     {
         //
+        $candidate = CandidateShift::find($id);
+
+        $candidate->delete();
+        return redirect('admin/candidate_index');
     }
 }

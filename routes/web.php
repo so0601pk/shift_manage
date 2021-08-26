@@ -95,6 +95,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
     Route::post('candidate_store', 'Admin\CandidateController@store')->name('admin.candidate_store');
     Route::get('candidate_edit/{id}', 'Admin\CandidateController@edit')->name('admin.candidate_edit');
     Route::post('candidate_update/{id}', 'Admin\CandidateController@update')->name('admin.candidate_update');
+    Route::post('candidate_destroy/{id}', 'Admin\CandidateController@destroy')->name('admin.candidate_destroy');
 });
 
 Route::get('admin.auth.login', 'Admin\ShiftManageController@login')->name('admin.auth.login');
