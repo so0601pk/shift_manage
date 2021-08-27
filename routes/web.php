@@ -91,6 +91,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
     Route::get('top', 'Admin\ShiftManageController@index')->name('admin.top');
     Route::get('calendar', 'Admin\CalendarController@show')->name('admin.calendar');
 
+    //従業員一覧ルート
+    Route::group(['prefix' => 'member', 'middleware' => 'auth:admin'], function(){
+        Route::get('staff_index', 'Admin\StaffController@index')->name('admin.member.staff_index');
+    });
+
     //シフト候補ルート
     Route::get('candidate_index', 'Admin\CandidateController@index')->name('admin.candidate_index');
     Route::get('candidate_create', 'Admin\CandidateController@create')->name('admin.candidate_create');

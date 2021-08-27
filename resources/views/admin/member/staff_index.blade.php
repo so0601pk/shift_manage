@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">シフト候補</div>
+                <div class="card-header">従業員一覧</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -25,27 +25,29 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">シフト記号</th>
-                                <th scope="col">勤務開始時間</th>
-                                <th scope="col">勤務終了時間</th>
-                                <th scope="col">休憩時間</th>
+                                <th scope="col">従業員番号</th>
+                                <th scope="col">名前</th>
+                                <th scope="col">ふりがな</th>
+                                <th scope="col">職業</th>
+                                <th scope="col">登録日</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($candidates as $candidate)
+                            @foreach($staffs as $staff)
                             <tr>
-                                <th>{{$candidate->candidate_name}}</th>
-                                <td>{{$candidate->begin_time}}</td>
-                                <td>{{$candidate->end_time}}</td>
-                                <td>{{$candidate->rest_time}}</td>
-                                <td class="candidate"><style>.candidate{display: flex;}</style>
-                                    <form action="{{ route('admin.candidate_edit', [ 'id' => $candidate->id ]) }}">
+                                <th></th>
+                                <th>{{$staff->name}}</th>
+                                <td></td>
+                                <td>{{$staff->profession}}</td>
+                                <td>{{$staff->created_at}}</td>
+                                <td class="staff"><style>.staff{display: flex;}</style>
+                                    <form action="#">
                                     @csrf
                                         <input type="submit" class="btn btn-success" value="編集する">
                                     </form>
-                                    <form method="POST" action="{{ route('admin.candidate_destroy', ['id' => $candidate->id ])}}" id="delete_{{ $candidate->id }}">
+                                    <form method="POST" action="#" id="delete_{{ $staff->id }}">
                                     @csrf
-                                        <a href="#" class="btn btn-danger" data-id="{{ $candidate->id }}" onclick="deletePost(this);" >削除する</a>
+                                        <a href="#" class="btn btn-danger" data-id="{{ $staff->id }}" onclick="deletePost(this);" >削除する</a>
                                     </form>
                                     <style>.btn-danger{margin-left: 10px;}</style>
                                 </td>

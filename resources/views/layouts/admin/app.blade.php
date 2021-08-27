@@ -58,7 +58,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('admin.member.staff_index') }}">
                                     従業員一覧
                                 </a>
                             </li>
