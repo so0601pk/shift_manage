@@ -90,6 +90,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 
     Route::get('top', 'Admin\ShiftManageController@index')->name('admin.top');
     Route::get('calendar', 'Admin\CalendarController@show')->name('admin.calendar');
+
+    //シフト候補ルート
     Route::get('candidate_index', 'Admin\CandidateController@index')->name('admin.candidate_index');
     Route::get('candidate_create', 'Admin\CandidateController@create')->name('admin.candidate_create');
     Route::post('candidate_store', 'Admin\CandidateController@store')->name('admin.candidate_store');
