@@ -53,7 +53,7 @@
                         </select>
                         <br>
                         その他
-                        <textarea name="contact"></textarea>
+                        <textarea name="others"></textarea>
                         <input type="submit" class="btn btn-info" value="登録する">
                     </from>
                 </div>
