@@ -28,13 +28,13 @@
                     <form method="POST" action="{{ route('admin.candidate_store') }}">
                     @csrf
                         従業員番号
-                        <input type="text" name="candidate_name">
+                        <input type="text" name="staff_number">
                         <br>
                         名前
-                        <input type="text" name="begin_time">
+                        <input type="text" name="name" placeholder="雀部流　太朗">
                         <br>
                         ふりがな
-                        <input type="text" name="end_time">
+                        <input type="text" name="hurigana" placeholder="じゃんぶる　たろう">
                         <br>
                         性別
                         <input type="radio" name="gender" value="0">男性
