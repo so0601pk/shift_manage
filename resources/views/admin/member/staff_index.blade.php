@@ -15,7 +15,7 @@
                     @endif
                     <form action="{{ route('admin.candidate_create')}}">
                         <button type="submit" class="btn btn-primary">
-                            新規シフト候補登録
+                            新規従業員登録
                         </button>
                     </form>
                     <!-- <form methid="GET" action="#" class="d-flex">
