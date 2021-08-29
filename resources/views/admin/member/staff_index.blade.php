@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form action="{{ route('admin.staff_create')}}">
+                    <form action="{{ route('admin.member.staff_create')}}">
                         <button type="submit" class="btn btn-primary">
                             新規従業員登録
                         </button>

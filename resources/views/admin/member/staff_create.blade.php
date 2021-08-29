@@ -25,7 +25,7 @@
                     @endif
 
                     <br>
-                    <form method="POST" action="{{ route('admin.candidate_store') }}">
+                    <form method="POST" action="#">
                     @csrf
                         従業員番号
                         <input type="text" name="staff_number">

@@ -94,6 +94,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
     //従業員一覧ルート
     Route::group(['prefix' => 'member', 'middleware' => 'auth:admin'], function(){
         Route::get('staff_index', 'Admin\StaffController@index')->name('admin.member.staff_index');
+        Route::get('staff_create', 'Admin\StaffController@create')->name('admin.member.staff_create');
     });
 
     //シフト候補ルート
