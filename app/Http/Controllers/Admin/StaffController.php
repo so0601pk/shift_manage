@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//エロクワントを使用するために読み込む
+use App\Models\Admin\Users;
+
 //DBファサード使用のために記述
 use Illuminate\Support\Facades\DB;
 
@@ -19,7 +22,7 @@ class StaffController extends Controller
     {
         //
         $query = DB::table('users');
-        $staffs = $query->select('id','name','profession','created_at')
+        $staffs = $query->select('id','staff_number','name','furigana','gender','profession','created_at')
         ->orderBy('name', 'asc')
         ->get();
         return view('admin.member.staff_index', compact('staffs'));
@@ -45,6 +48,18 @@ class StaffController extends Controller
     public function store(Request $request)
     {
         //
+        $staff = new Users;
+
+        $staff->staff_number = $request->input('staff_number');
+        $staff->name = $request->input('name');
+        $staff->furigana = $request->input('furigana');
+        $staff->gender = $request->input('gender');
+        $staff->profession = $request->input('profession');
+        $staff->password = $request->input('password');
+        $staff->others = $request->input('others');
+
+        $staff->save();
+        return redirect('admin.member.staff_index');
     }
 
     /**

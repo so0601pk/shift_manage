@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form action="{{ route('admin.member.staff_create')}}">
+                    <form action="{{ route('admin.member.staff_create') }}">
                         <button type="submit" class="btn btn-primary">
                             新規従業員登録
                         </button>
@@ -28,6 +28,7 @@
                                 <th scope="col">従業員番号</th>
                                 <th scope="col">名前</th>
                                 <th scope="col">ふりがな</th>
+                                <th scope="col">性別</th>
                                 <th scope="col">職業</th>
                                 <th scope="col">登録日</th>
                             </tr>
@@ -35,10 +36,11 @@
                         <tbody>
                             @foreach($staffs as $staff)
                             <tr>
-                                <th></th>
+                                <th>{{$staff->staff_number}}</th>
                                 <th>{{$staff->name}}</th>
-                                <td></td>
+                                <td>{{$staff->furigana}}</td>
                                 <td>{{$staff->profession}}</td>
+                                <td>{{$staff->gender}}</td>
                                 <td>{{$staff->created_at}}</td>
                                 <td class="staff"><style>.staff{display: flex;}</style>
                                     <form action="#">

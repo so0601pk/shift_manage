@@ -25,7 +25,7 @@
                     @endif
 
                     <br>
-                    <form method="POST" action="#">
+                    <form method="POST" action="{{ route('admin.member.staff_store') }}">
                     @csrf
                         従業員番号
                         <input type="text" name="staff_number">
@@ -34,12 +34,12 @@
                         <input type="text" name="name" placeholder="雀部流　太朗">
                         <br>
                         ふりがな
-                        <input type="text" name="hurigana" placeholder="じゃんぶる　たろう">
+                        <input type="text" name="furigana" placeholder="じゃんぶる　たろう">
                         <br>
                         性別
-                        <input type="radio" name="gender" value="0">男性
-                        <input type="radio" name="gender" value="1">女性
-                        <input type="radio" name="gender" value="2">その他
+                        <input type="radio" name="gender" value="0" id="0"><label for="0">男性</label>
+                        <input type="radio" name="gender" value="1" id="1"><label for="1">女性</label>
+                        <input type="radio" name="gender" value="2" id="2"><label for="2">その他</label>
                         <br>
                         職業
                         <select name="profession">
@@ -54,6 +54,10 @@
                         <br>
                         その他
                         <textarea name="others"></textarea>
+                        <br>
+                        パスワード
+                        <input type="password" name="password">
+                        <br>
                         <input type="submit" class="btn btn-info" value="登録する">
                     </from>
                 </div>
