@@ -44,11 +44,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
                         @else
                             <li>
                                 <a class="dropdown-item" href="{{ route('user.apply') }}">
