@@ -11,7 +11,8 @@
                     <form method="POST" action="{{ route('user.login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <!-- 認証でメールアドレスを使用する際に使用 -->
+                        <!-- <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -23,7 +24,22 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
+
+                        <!-- 認証でIDを使用する -->
+                        <!-- <div class="form-group row">
+                            <label for="staff_number" class="col-md-4 col-form-label text-md-right">社員番号</label>
+
+                            <div class="col-md-6">
+                                <input id="staff_number" type="text" class="form-control @error('email') is-invalid @enderror" name="staff_number" value="{{ old('staff_number') }}" required autocomplete="staff_number" autofocus>
+
+                                @error('staff_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> -->
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

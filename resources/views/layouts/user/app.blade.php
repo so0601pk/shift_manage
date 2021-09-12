@@ -57,8 +57,8 @@
 
                                 <div aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('user.logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('ログアウト') }}
                                     </a>
 
