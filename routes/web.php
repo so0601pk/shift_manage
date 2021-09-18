@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Auth::routes(); //Auth::routes(['register' => false]))するとRegisterのリンクがトップ画面上から消え
+Auth::routes(); //Auth::routes(['register' => false]))するとRegisterのリンクがトップ画面上から消える
 
 //ユーザーログイン
 Route::namespace('User')->prefix('user')->name('user.')->group(function(){
